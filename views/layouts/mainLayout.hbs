@@ -12,8 +12,18 @@
         .row{
             margin: 25px auto;
         }
+        .card{
+            margin: 5px auto;
+        }
+        .btn{
+            margin: 5px auto;
+        }
         .navbar{
             color: white;
+        }
+        #lastUpdatePar{
+            margin: 3px auto;
+            color: aquamarine;
         }
     </style>
 </head>
@@ -24,8 +34,7 @@
         <nav class="navbar navbar-dark bg-dark">
             <a class="navbar-brand">COVID-19 Dashboard</a>
             <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                <p id="lastUpdatePar">Last Update: {{update_date_time}}</p>
             </form>
         </nav>
     </div>
@@ -57,7 +66,7 @@
         </div>
       </div>
       <div class="card-footer text-muted">
-          Create By - Ashan Shanaka | Undergraduate At <a href="https://ucsc.cmb.ac.lk/">University of Colombo School of Computing</a>
+          Created By - Ashan Shanaka | Undergraduate At <a href="https://ucsc.cmb.ac.lk/">University of Colombo School of Computing</a>
           <p>Email - ashansjp@gmail.com</p>
       </div>
     </div>

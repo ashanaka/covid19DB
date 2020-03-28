@@ -7,6 +7,9 @@ let app = express();
 
 
 app.listen(process.env.PORT, process.env.IP);
+// app.listen(3000, () => {
+//     console.log('Express server started using port : 3000');
+// });
 
 //setting-up handle-bars
 const exphbs = require('express-handlebars');
@@ -35,6 +38,7 @@ app.get('/', function(req, res){
                 local_total_number_of_individuals_in_hospitals: parsedData["data"]["local_total_number_of_individuals_in_hospitals"],
                 global_total_cases: parsedData["data"]["global_total_cases"],
                 global_deaths: parsedData["data"]["global_deaths"],
+                update_date_time: parsedData["data"]["update_date_time"],
             });
         }else{
             console.log("Something went wrong!");
