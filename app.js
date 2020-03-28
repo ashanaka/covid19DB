@@ -6,9 +6,7 @@ const request = require('request');
 let app = express();
 
 
-app.listen(3000, () => {
-    console.log('Express server started using port : 3000');
-});
+app.listen(process.env.PORT, process.env.IP);
 
 //setting-up handle-bars
 const exphbs = require('express-handlebars');
