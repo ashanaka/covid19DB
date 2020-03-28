@@ -1,5 +1,6 @@
 const express = require('express');
-
+const path = require('path');
+const request = require('request');
 
 
 let app = express();
@@ -21,5 +22,20 @@ app.set('view engine', 'hbs');
 
 
 app.get('/', function(req, res){
-    res.render('/home');
+
+    let apiURL = "https://hpb.health.gov.lk/api/get-current-statistical";
+
+    request(apiURL, function(error, response, body){
+        if(!error && response.statusCode == 200){
+            var parsedData = JSON.parse(body);
+            res.render('home',{
+                passedData: parsedData["data"]["local_total_cases"],
+            });
+        }else{
+            console.log("Something went wrong!");
+            console.log(error);
+        }
+    });
+
+    
 });
