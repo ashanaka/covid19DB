@@ -29,7 +29,14 @@ app.get('/', function(req, res){
         if(!error && response.statusCode == 200){
             var parsedData = JSON.parse(body);
             res.render('home',{
-                passedData: parsedData["data"]["local_total_cases"],
+                local_new_cases: parsedData["data"]["local_new_cases"],
+                local_active_cases: parsedData["data"]["local_active_cases"],
+                local_total_cases: parsedData["data"]["local_total_cases"],
+                local_deaths: parsedData["data"]["local_deaths"],
+                local_recovered: parsedData["data"]["local_recovered"],
+                local_total_number_of_individuals_in_hospitals: parsedData["data"]["local_total_number_of_individuals_in_hospitals"],
+                global_total_cases: parsedData["data"]["global_total_cases"],
+                global_deaths: parsedData["data"]["global_deaths"],
             });
         }else{
             console.log("Something went wrong!");
